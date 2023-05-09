@@ -8,9 +8,13 @@ import {
   TweetsParagraph,
   FollowersParagraph,
   StyledButton,
+  UserPhoto,
 } from './Card.styled';
 
-export default function Card() {
+
+
+export default function Card({ tweets, followers, avatar, id, isFollowed, handleCLick }) {
+
   return (
     <CardContainer>
       <TopPartOfCard>
@@ -18,20 +22,15 @@ export default function Card() {
       </TopPartOfCard>
 
       <MiddlePartOfCard>
-        <PhotoContainer></PhotoContainer>
+        <PhotoContainer>
+          <UserPhoto src={avatar} alt="user's avatar" width={62} height={62} />
+        </PhotoContainer>
       </MiddlePartOfCard>
       <BottomPartOfTheCard>
-        <TweetsParagraph
-        >
-          tweets
-        </TweetsParagraph>
-        <FollowersParagraph
-        >
-          followers
-        </FollowersParagraph>
-        <StyledButton
-        >
-          follow
+        <TweetsParagraph>{tweets} tweets</TweetsParagraph>
+        <FollowersParagraph>{followers} followers</FollowersParagraph>
+        <StyledButton isFollowed={isFollowed} type="button" onClick={() => handleCLick(id)}>
+          {isFollowed? 'followed': 'follow'}
         </StyledButton>
       </BottomPartOfTheCard>
     </CardContainer>
