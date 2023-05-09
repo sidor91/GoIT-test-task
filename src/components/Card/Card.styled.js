@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
+width: 380px;
+height: 460px;
   background: linear-gradient(
     114.99deg,
     #471ca9 -0.99%,
@@ -72,11 +74,14 @@ const FollowersParagraph = styled.p`
 `;
 
 const StyledButton = styled.button`
-  background-color: ${({isFollowed}) => isFollowed? "#5CD3A8" :  "#ebd8ff"};
+  background-color: ${({ isFollowed }) => (isFollowed ? '#5CD3A8' : '#ebd8ff')};
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
   border: none;
-  padding: 14px 56px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: ${({ isFollowed }) => (isFollowed ? '39px' : '56px')};
+  padding-right: ${({ isFollowed }) => (isFollowed ? '39px' : '56px')};
   font-weight: 600;
   font-size: 18px;
   color: #373737;

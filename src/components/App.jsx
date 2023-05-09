@@ -1,19 +1,15 @@
-import CardList from './CardList';
+import { Route, Routes } from 'react-router-dom';
+import SharedLayout from './SharedLayout';
+import HomePage from '../pages/HomePage';
+import TweetsPage from 'pages/TweetsPage';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        // height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-        paddingTop: 100,
-      }}
-    >
-      <CardList />
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="tweets" element={<TweetsPage />}/>
+      </Route>
+    </Routes>
   );
 };
