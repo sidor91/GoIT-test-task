@@ -29,8 +29,12 @@ export default function Card({ tweets, followers, avatar, id, isFollowed, handle
       <BottomPartOfTheCard>
         <TweetsParagraph>{tweets} tweets</TweetsParagraph>
         <FollowersParagraph>{followers} followers</FollowersParagraph>
-        <StyledButton isFollowed={isFollowed} type="button" onClick={() => handleCLick(id)}>
-          {isFollowed? 'followed': 'follow'}
+        <StyledButton
+          isFollowed={isFollowed}
+          type="button"
+          onClick={() => handleCLick(id)}
+        >
+          {isFollowed ? 'Following' : 'Follow'}
         </StyledButton>
       </BottomPartOfTheCard>
     </CardContainer>
